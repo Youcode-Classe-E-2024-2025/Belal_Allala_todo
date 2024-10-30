@@ -1,0 +1,105 @@
+body{
+    background-color: #fdfaf3;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.logo{
+    height: 50px;
+    width: auto;
+}
+.search{
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-content:center ;
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 1px 5px;
+}
+
+.search button{
+    width: 10%;
+    border: none;
+    border-right: 2px solid black ;
+    margin-left: 20px;
+    background-color: #fdfaf3;
+    img{
+        width: 100%;
+        height: auto;
+    }
+}
+
+.search input{
+    width: 80%;
+    border: none;
+    font-size: 32px;
+    background-color: #fdfaf3;
+    margin-right:20px ;
+}
+
+.kanban-board {
+    background-color:#fdfaf3;
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    border-radius: 30px;
+    padding: 10px;
+    width: 30%;
+}
+
+#todo{
+    border: 2px solid #ff7fce;
+    box-shadow: 5px 5px 0  #ffb6e3;
+    .ligne-pointillee{
+        border-top: 2px dashed #ff7fce;
+    }
+}
+
+#doing {
+    border: 2px solid #ffbc57;
+    box-shadow: 5px 5px 0  #ffd18c;
+    .ligne-pointillee{
+        border-top: 2px dashed #ffbc57;
+    }
+}
+
+#done{
+    border: 2px solid #a071ff;
+    box-shadow: 5px 5px 0  #b696f6;
+    .ligne-pointillee{
+        border-top: 2px dashed #a071ff;
+    }
+}
+
+.column h2{
+    text-align: center;
+    font-family: "Bitter";
+}
+
+.ligne-pointillee {
+    margin: auto;
+    width: 80%; 
+    height: 2px; 
+    border-top: 2px dashed #ffb6e3;
+}
+
+.task-list {
+    background-color: violet;
+    list-style: none;
+    padding: 0;
+}
+
+.task {
+    background-color: green;
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
