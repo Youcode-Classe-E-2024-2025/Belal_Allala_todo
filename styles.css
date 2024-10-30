@@ -1,4 +1,4 @@
-body{
+/*body{
     background-color: #fdfaf3;
 }
 
@@ -98,8 +98,12 @@ body{
 
 .task {
     background-color: green;
-    background-color: #f2f2f2;
-    padding: 10px;
+    /*background-color: #f2f2f2;*/
+    /*padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
-}
+}*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

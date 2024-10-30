@@ -5,35 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="./dist/output.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="header">
-        <img src="TASK_FLOW-removebg-preview.png" class="logo" alt="logo task flow">
-        <div class="search">
-            <button><img src="icon-search-removebg-preview.png" alt="icon_search"></button>
-            <input type="search" >
+<body class="bg-[#fdfaf3] font-sans">
+
+    <div class="flex justify-between m-5">
+        <img src="TASK_FLOW-removebg-preview.png" class="h-12 w-auto" alt="logo task flow">
+        <div class="flex items-center w-1/2 border-2 border-black rounded-full p-1">
+            <button class="w-10 border-none bg-[#fdfaf3] ml-5" ><img src="icon-search-removebg-preview.png" alt="icon_search" class="w-full h-auto"></button>
+            <input type="search" class="flex-grow border-none bg-[#fdfaf3] text-2xl px-4 focus:outline-none">
         </div>
         <img src="ajouter_icon.png" alt="ajouter une tache ">
     </div>
-    <div class="kanban-board">
-        <div class="column" id="todo">
-            <h2>TO DO</h2>
-            <div class="ligne-pointillee"></div>
+
+    <div class="kanban-board flex justify-between p-5">
+
+        <div class="column w-1/3 border-2 border-pink-400 shadow-md shadow-pink-200 rounded-lg p-5 bg-[#fdfaf3]" id="todo">
+            <h2 class="text-center font-bitter">TO DO</h2>
+            <div class="ligne-pointillee border-t-2 border-dashed border-pink-400 mx-auto my-4"></div>
             <ul class="task-list"></ul>
         </div>
-        <div class="column" id="doing">
-            <h2>DOING</h2>
-            <div class="ligne-pointillee"></div>
-            <ul class="task-list"></ul>
+
+        <div class="column w-1/3 border-2 border-yellow-400 shadow-md shadow-yellow-200 rounded-lg p-5 bg-[#fdfaf3]" id="doing">
+            <h2 class="text-center font-bitter">DOING</h2>
+            <div class="ligne-pointillee border-t-2 border-dashed border-yellow-400 mx-auto my-4"></div>
+            <ul class="task-list list-none p-0"></ul>
         </div>
-        <div class="column" id="done">
-            <h2>DONE</h2>
-            <div class="ligne-pointillee"></div>
-            <ul class="task-list"></ul>
+
+        <div class="column w-1/3 border-2 border-purple-400 shadow-md shadow-purple-200 rounded-lg p-5 bg-[#fdfaf3]" id="done">
+            <h2 class="text-center font-bitter">DONE</h2>
+            <div class="ligne-pointillee border-t-2 border-dashed border-purple-400 mx-auto my-4"></div>
+            <ul class="task-list list-none p-0"></ul>
         </div>
+
     </div>
     <script src="script.js"></script>
 </body>
