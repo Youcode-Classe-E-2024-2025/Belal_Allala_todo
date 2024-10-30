@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <img src="TASK_FLOW-removebg-preview.png" class="logo" alt="logo task flow">
+        <div class="search">
+            <button><img src="icon-search-removebg-preview.png" alt="icon_search"></button>
+            <input type="search" >
+        </div>
+        <img src="ajouter_icon.png" alt="ajouter une tache ">
+    </div>
+    <div class="kanban-board">
+        <div class="column" id="todo">
+            <h2>TO DO</h2>
+            <div class="ligne-pointillee"></div>
+            <ul class="task-list"></ul>
+        </div>
+        <div class="column" id="doing">
+            <h2>DOING</h2>
+            <div class="ligne-pointillee"></div>
+            <ul class="task-list"></ul>
+        </div>
+        <div class="column" id="done">
+            <h2>DONE</h2>
+            <div class="ligne-pointillee"></div>
+            <ul class="task-list"></ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
