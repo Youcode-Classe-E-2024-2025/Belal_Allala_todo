@@ -1,0 +1,28 @@
+<div id="formulaireTache" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+    <div class="bg-white p-5 rounded-md w-full max-w-md">
+        <h2 class="text-xl font-bold mb-4">Ajouter une nouvelle tâche</h2>
+        
+        <form id="formNouvelleTache">
+            <label class="block mb-2">Nom de la tâche</label>
+            <input type="text" id="nomTache" class="border p-2 rounded-md w-full mb-3" required>
+
+            <label class="block mb-2">Description de la tâche</label>
+            <textarea id="descriptionTache" class="border p-2 rounded-md w-full mb-3" required></textarea>
+
+            <label class="block mb-2">Date limite</label>
+            <input type="date" id="deadlineTache" class="border p-2 rounded-md w-full mb-3" required>
+
+            <label class="block mb-2">Priorité</label>
+            <select id="prioriteTache" class="border p-2 rounded-md w-full mb-3">
+                <option value="haute">Haute</option>
+                <option value="moyenne">Moyenne</option>
+                <option value="basse">Basse</option>
+            </select>
+
+            <div class="flex justify-end">
+                <button type="button" onclick="fermerFormulaire()" class="bg-gray-300 p-2 rounded-md mr-2">Annuler</button>
+                <button type="button" onclick="ajouterTache()" class="bg-blue-500 text-white p-2 rounded-md">Ajouter</button>
+            </div>
+        </form>
+    </div>
+</div>
