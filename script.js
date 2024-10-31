@@ -1,48 +1,67 @@
+//variable
+const list_taches=[];
+const list_taches_todo=list_taches.filter(acc);
+const list_taches_doing=[];
+const list_taches_done=[];
 
 
-// Ajouter des fonctionnalités pour déplacer les tâches entre les colonnes,
-// modifier les tâches, supprimer les tâches, etc.
-// Fonction pour afficher le formulaire de tâche
-function ouvrirFormulaire() {
-    document.getElementById("formulaireTache").classList.add("show");
+function ouvrirFormulaire(id_forme){
+    document.getElementById(id_forme).classList.add("show");
 }
 
-// Fonction pour fermer le formulaire de tâche
-function fermerFormulaire() {
-    document.getElementById("formulaireTache").classList.remove("show");
+function fermerFormulaire(){
+    document.getElementById(id_forme).classList.remove("show");
 }
 
-// Fonction pour ajouter une nouvelle tâche
-function ajouterTache() {
-    // Récupère les valeurs du formulaire
-    const nomTache = document.getElementById("nomTache").value.trim();
-    const descriptionTache = document.getElementById("descriptionTache").value.trim();
-    const deadlineTache = document.getElementById("deadlineTache").value;
-    const prioriteTache = document.getElementById("prioriteTache").value;
-
-    // Vérifie que les champs obligatoires sont remplis
-    if (!nomTache || !descriptionTache || !deadlineTache) {
-        alert("Veuillez remplir tous les champs.");
-        return;
+function add_tache(id,nom,description,deadline,priorite){
+    const index_priorite=0;
+    if(priorite==='haute'){
+        index_priorite=1;
+    }else if(priorite==='moyenne'){
+        index_priorite=2;
+    }else{
+        index_priorite=3;
     }
+    list_taches.push([id,nom,description,deadline,index_priorite,1]);
+}
+
+function add_tache_to_page(nom,deadline,priorite){
+    const nouvelle_Tache = document.createElement("div");
+    if(priorite==='haute'){
+        nouvelle_Tache.className = "task-item p-2 border border-[#5271ff]  rounded-lg shadow-[5px_5px_0_#38b6ff] w-[20px] h-[20px]"
+    }else if(priorite==='moyenne'){
+        nouvelle_Tache.className = "task-item p-2 border border-[#5271ff]  rounded-lg shadow-[5px_5px_0_#38b6ff] w-[20px] h-[20px]"
+    }else{
+        nouvelle_Tache.className = "task-item p-2 border border-[#5271ff]  rounded-lg shadow-[5px_5px_0_#38b6ff] w-[20px] h-[20px]"
+    }
+}
+
+function ajouterTache() {
+    const nom = document.getElementById("nomTache").value.trim();
+    const description = document.getElementById("descriptionTache").value.trim();
+    const deadline = document.getElementById("deadlineTache").value.replace("T", " à ");
+    const priorite = document.getElementById("prioriteTache").value;
 
     // Crée un nouvel élément de tâche
-    const nouvelleTache = document.createElement("li");
-    nouvelleTache.className = `task-item p-2 border rounded-md mb-2 bg-gray-100 border-${prioriteTache === 'haute' ? 'red-500' : prioriteTache === 'moyenne' ? 'yellow-500' : 'green-500'}`;
-    
+    const nouvelle_Tache = document.createElement("div");
+    if(priorite==='haute'){
+        nouvelle_Tache.className = "task-item p-2 border border-[#5271ff]  rounded-lg shadow-[5px_5px_0_#38b6ff] w-[20px] h-[20px]"
+    }else if(priorite==='moyenne'){
+        nouvelle_Tache.className = "task-item p-2 border border-[#5271ff]  rounded-lg shadow-[5px_5px_0_#38b6ff] w-[20px] h-[20px]"
+    }else{
+        nouvelle_Tache.className = "task-item p-2 border border-[#5271ff]  rounded-lg shadow-[5px_5px_0_#38b6ff] w-[20px] h-[20px]"
+    }
+ 
     // Ajoute le contenu à la tâche
-    nouvelleTache.innerHTML = `
-        <h3 class="font-bold">${nomTache}</h3>
-        <p>${descriptionTache}</p>
-        <p class="text-sm text-gray-500">Date limite : ${deadlineTache}</p>
-        <p class="text-sm text-${prioriteTache === 'haute' ? 'red' : prioriteTache === 'moyenne' ? 'yellow' : 'green'}-500">Priorité : ${prioriteTache}</p>
+    nouvelle_Tache.innerHTML = `
+        <img src="ajouter_icon.png" alt="ajouter une tache class=" w-full h-auto  pr-[5px]">
+        <p class="text-sm text-gray-500">${deadline}</p>
+        <h3 class="font-bold">${nom}</h3>
+        <p>${description}</p>
     `;
 
     // Ajoute la tâche dans la liste "TO DO"
     const todoList = document.querySelector("#todo .task-list");
-    todoList.appendChild(nouvelleTache);
-
-    // Réinitialise le formulaire et ferme la modale
-    document.getElementById("formNouvelleTache").reset();
+    todoList.appendChild(nouvelle_Tache);
     fermerFormulaire();
 }
