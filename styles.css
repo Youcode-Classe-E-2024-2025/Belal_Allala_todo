@@ -114,3 +114,11 @@
 #formulaireTache.show {
     display: flex;
 }
+/* .is-dragging{
+    border:2px solide #5271ff;
+    box-shadow: 4px 4px 0 #38b6ff;
+} */
+
+.task-dragging {
+    @apply border-dragging shadow-dragging;
+}
